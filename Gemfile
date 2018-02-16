@@ -41,6 +41,7 @@ gem 'awesome_print'
 gem 'simple_form'
 gem 'figaro'
 gem 'cloudinary'  # Assigned cloud name: dleml2xmq
+gem 'carrierwave', '~> 1.2'
 
 
 group :development, :test do
