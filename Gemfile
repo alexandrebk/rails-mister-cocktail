@@ -42,6 +42,9 @@ gem 'simple_form'
 gem 'figaro'
 gem 'cloudinary'  # Assigned cloud name: dleml2xmq
 gem 'carrierwave', '~> 1.2'
+gem 'autoprefixer-rails'
+gem 'bootstrap-sass' # Bootstrap v3
+gem 'font-awesome-sass'
 
 
 group :development, :test do
