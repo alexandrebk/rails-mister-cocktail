@@ -40,8 +40,7 @@ ruby '2.4.3'
 gem 'awesome_print'
 gem 'simple_form'
 gem 'figaro'
-
-
+gem 'cloudinary'  # Assigned cloud name: dleml2xmq
 
 
 group :development, :test do
