@@ -1,15 +1,22 @@
 <h1>Liste de tous mes cocktails</h1>
 
+<div class="row">
+  <div class="container">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-lg-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cocktail.photo %>');">
+        <div class="card-category"><%= link_to cocktail.name, cocktail_path(cocktail) %></div>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<% @cocktails.each do |cocktail| %>
-  <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-  <p>
-    <%= link_to "Add ingredients", cocktail_path(cocktail) %>
-  </p>
-<% end %>
 
 
 <%= cl_image_tag("vvrlhymndj6rtkrhk345.jpg", width: 400, height: 300, crop: :fill) %>
 
 <!-- for face detection -->
 <%= cl_image_tag("lhkjgtmvhacjivy4cftl.jpg", width: 150, height: 150, crop: :thumb, gravity: :face) %>
+
+

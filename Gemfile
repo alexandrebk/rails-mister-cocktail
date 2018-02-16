@@ -45,6 +45,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass' # Bootstrap v3
 gem 'font-awesome-sass'
+gem 'jquery-rails'
 
 
 group :development, :test do

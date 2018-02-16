@@ -19,8 +19,8 @@ class ReviewsController < ApplicationController
 
   private
 
-  def dose_params
-    params.require(:dose).permit(:content, :cocktail_id)
+  def review_params
+    params.require(:review).permit(:content, :cocktail_id)
   end
 
 end
