@@ -1,13 +1,14 @@
 class ReviewsController < ApplicationController
+
   def new
-    @cocktail = Cocktail.find(params[:cocktail_id])
-    @review = Review.new
+    @cocktail        = Cocktail.find(params[:cocktail_id])
+    @review          = Review.new
     @review.cocktail = @cocktail
   end
 
   def create
-    @cocktail = Cocktail.find(params[:cocktail_id])
-    @review = Review.new(review_params)
+    @cocktail        = Cocktail.find(params[:cocktail_id])
+    @review          = Review.new(review_params)
     @review.cocktail = @cocktail
     if @review.save
     # no need for app/views/doses/create.html.erb
@@ -20,7 +21,10 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:content, :cocktail_id)
+    params.require(:review).permit(
+      :content,
+      :cocktail_id
+    )
   end
 
 end

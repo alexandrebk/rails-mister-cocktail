@@ -1,22 +1,29 @@
-<h1>Liste de tous mes cocktails</h1>
+
 
 <div class="row">
   <div class="container">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-lg-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cocktail.photo %>');">
-        <div class="card-category"><%= link_to cocktail.name, cocktail_path(cocktail) %></div>
-      </div>
+      <div class="col-lg-8">
+      <%= link_to(cocktail_path(cocktail), class: "card") do %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cocktail.photo %>');">
+          <div class="card-category">
+            <%= link_to cocktail.name, cocktail_path(cocktail) %>
+          </div>
+        </div>
+      <% end %>
       </div>
     <% end %>
   </div>
 </div>
 
 
+<div>
+  <p> Cloudinary Image Bridge: </p>
+  <%= cl_image_tag("vvrlhymndj6rtkrhk345.jpg", width: 400, height: 300, crop: :fill) %>
+</div>
 
-<%= cl_image_tag("vvrlhymndj6rtkrhk345.jpg", width: 400, height: 300, crop: :fill) %>
-
-<!-- for face detection -->
-<%= cl_image_tag("lhkjgtmvhacjivy4cftl.jpg", width: 150, height: 150, crop: :thumb, gravity: :face) %>
-
+<div>
+  <p> Exemple for face detection: </p>
+  <%= cl_image_tag("lhkjgtmvhacjivy4cftl.jpg", width: 150, height: 150, crop: :thumb, gravity: :face) %>
+</div>
 
