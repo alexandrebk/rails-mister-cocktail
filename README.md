@@ -7,7 +7,7 @@ Le site est développé en Ruby 2.4.3 et Rails 5.1.5.
 Pour lancer l'application sur votre ordinateur:
 
 ```
-git clone git@github.com:louleman34/whikend.git
+git clone git@github.com:alexandrebk/rails-mister-cocktail.git
 cd whikend
 bundle install
 yarn install
