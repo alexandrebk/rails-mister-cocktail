@@ -20,10 +20,16 @@ class ApplicationController < ActionController::Base
   #   end
   # end
 
-  # def show
-  #   puts "debug"
-  #   p self.class
+  define_method("show") do |arg|
+    name_class = self.class.to_s.split("sC")
+    var_instance = "@#{name_class[0].downcase}"
+    self.instance_variable_set( var_instance, name_class[0].constantize.find(params[:id]) )
+  end
 
+  # def show
+  #   name_class = self.class.to_s.split("sC")
+  #   var_instance = "@#{name_class[0].downcase}"
+  #   self.instance_variable_set( var_instance, name_class[0].constantize.find(params[:id]) )
   # end
 
 
