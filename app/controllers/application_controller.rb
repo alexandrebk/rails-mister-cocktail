@@ -7,23 +7,12 @@ class ApplicationController < ActionController::Base
 
   # before_action :set_review, only: [:show, :edit, :update, :destroy]
 
-  # def set_review
-  #   @review = Review.find(params[:id])
-  # end
-
-  # ACTIONS.each do |action|
-  #   define_method("{action}") do
-  #     puts "debug"
-  #     p self
-  #     # @restaurant = toto.capitalize.constantize.find(params[:id])
-  #     # fred.instance_variable_set(:@a, 'dog')
-  #   end
-  # end
-
-  define_method("show") do |arg|
-    name_class = self.class.to_s.split("sC")
-    var_instance = "@#{name_class[0].downcase}"
-    self.instance_variable_set( var_instance, name_class[0].constantize.find(params[:id]) )
+  ACTIONS.each do |action|
+    define_method("#{action}") do
+      name_class = self.class.to_s.split("sC")
+      var_instance = "@#{name_class[0].downcase}"
+      self.instance_variable_set( var_instance, name_class[0].constantize.find(params[:id]) )
+    end
   end
 
   # def show
